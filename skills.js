@@ -1,3 +1,12 @@
-function calculateNumbers(var1, var2) {
-    return var1 + var2;
+class Skill {
+    constructor(skillName, level) {
+        this.skillName = skillName;
+        this.level = level;
+    }
+
+    getSkillInfo() {
+        return `${this.skillName} skill level is ${this.level}.`;
+    }
 }
+
+module.exports = Skill;

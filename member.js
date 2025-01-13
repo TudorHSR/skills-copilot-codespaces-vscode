@@ -1,8 +1,12 @@
-function skillsMember()
-{
-    let member = new Object();
-    member.name = "John";
-    member.age = 25;
-    member.skills = ["JavaScript", "HTML", "CSS"];
-    return member;
+class Member {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    getInfo() {
+        return `${this.name} is ${this.age} years old.`;
+    }
 }
+
+module.exports = Member;

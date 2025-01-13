@@ -1,10 +1,14 @@
-// create web server
-const express = require('express');
-const app = express();
+const Member = require('./member');
+const Skill = require('./skill');
 
-// create comment array
-const comments = [ 
-    { username: 'Tammy', comment: 'lol that is so funny!' },
-    { username: 'FishBoi', comment: 'Pls delete this post.' },
-    { username: 'Haha', comment: 'I am so happy.' }
-];
+// Function to create a comment about a member's skill
+function commentOnSkill(member, skill, comment) {
+    return `${member.getInfo()} has a skill: ${skill.getSkillInfo()}. Comment: ${comment}`;
+}
+
+// Example Usage
+const john = new Member('John Doe', 30);
+const coding = new Skill('Coding', 'Expert');
+console.log(commentOnSkill(john, coding, 'John is great at coding!'));
+
+module.exports = commentOnSkill;
